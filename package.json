@@ -1,0 +1,30 @@
+{
+  "name": "agreeable-host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanramage/agreeable-host.git"
+  },
+  "keywords": [
+    "p2p",
+    "server"
+  ],
+  "author": "Ryan Ramage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanramage/agreeable-host/issues"
+  },
+  "homepage": "https://github.com/ryanramage/agreeable-host#readme",
+  "dependencies": {
+    "agreeable": "^1.2.0",
+    "b4a": "^1.6.6",
+    "hyperdht": "^6.14.0",
+    "jsonrpc-mux": "^1.1.1",
+    "protomux": "^3.5.1"
+  }
+}
