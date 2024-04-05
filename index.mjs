@@ -5,11 +5,13 @@ import Channel from 'jsonrpc-mux'
 import { enact } from 'agreeable'
 export { loadAgreement } from 'agreeable'
 
-export  async function host (implementation, agreement, { seed, validator, dhtOpts } ) {
-  const dht = new DHT(dhtOpts)
-  const seedBuf =  seed ? b4a.from(seed, 'hex') : null
+export  async function host (agreement, implementation, opts) {
+  if (!opts) opts = {}
+  if (!opts.validator) opts.validator = async () => {}
+  const dht = new DHT(opts.dhtOpts)
+  const seedBuf =  opts.seed ? b4a.from(opts.seed, 'hex') : null
   const keyPair = DHT.keyPair(seedBuf)
-  const connect = c => enact(new Channel(new Protomux(c)), agreement, implementation, validator)
+  const connect = c => enact(new Channel(new Protomux(c)), agreement, implementation, opts.validator)
   const server = dht.createServer(connect)
 
   await server.listen(keyPair)
