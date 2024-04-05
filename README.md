@@ -1,6 +1,6 @@
 Create a simple p2p server in a few lines
 
-```npm i agreeable-host agreeable zod```
+```npm i agreeable-host agreeable```
 
 agreement.mjs
 ```
