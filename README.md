@@ -4,8 +4,7 @@ Create a simple p2p server in a few lines
 
 agreement.mjs
 ```
-import { z } from 'zod'
-import { params } from 'agreeable'
+import { z, params } from 'agreeable'
 
 const api = { 
   role: 'testthisout', 

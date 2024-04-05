@@ -1,5 +1,4 @@
-import { z } from 'zod'
-import { params } from 'agreeable'
+import { z, params } from 'agreeable'
 
 const api = { 
   role: 'testthisout', 
