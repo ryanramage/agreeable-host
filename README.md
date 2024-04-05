@@ -23,14 +23,10 @@ index.mjs
 
 ```
 import { loadAgreement, host }  from 'agreeable-host'
-const agreement = await loadAgreement('./agreement.mjs', import.meta.url)
-
-const impl = {}
-impl.addTwo = ({a, b}) => a + b
-impl.randomName = () => 'bob'
-
-host(agreement, impl)
-
+host(await loadAgreement('./agreement.mjs', import.meta.url), {
+  addTwo: ({a, b}) => a + b,
+  randomName: () => 'bob'
+})
 
 ```
 
@@ -38,12 +34,13 @@ then just run
 
 ```
 node index.mjs
+listening on: a406ea1579687011e96943d7b9bcde9a3e17809dc3fdb07edc0cb7569329ee3a
 ```
 
-then connect with the agreeable-ui to test it
+the services key is output and then connect with the agreeable-ui to test it
 
 ```
-pear run pear://qrxbzxyqup1egwjnrmp7fcikk31nekecn43xerq65iq3gjxiaury
+pear run pear://qrxbzxyqup1egwjnrmp7fcikk31nekecn43xerq65iq3gjxiaury/a406ea1579687011e96943d7b9bcde9a3e17809dc3fdb07edc0cb7569329ee3a
 ```
 
 
